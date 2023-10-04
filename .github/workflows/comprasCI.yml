@@ -46,3 +46,9 @@ jobs:
         run: |
           cd Aula-GitHub-Actions
           mvn clean test site
+
+      - name: Upload de artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: Aula-GitHub-Actions
+          path: Aula-GitHub-Actions/target/site
