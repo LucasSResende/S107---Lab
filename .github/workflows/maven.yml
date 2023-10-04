@@ -32,6 +32,7 @@ jobs: #cada etapa do workflow
   build: #1a etapa
     runs-on: ubuntu-latest #sistema operacional de ultima versão em vm
 
+    needs: teste
     steps: #
       - uses: actions/checkout@v3
       - name: Set up JDK 17
