@@ -28,3 +28,17 @@ jobs: #cada etapa do workflow
           cache: maven
       - name: Test with Maven
         run: mvn clean test site
+
+  build: #1a etapa
+    runs-on: ubuntu-latest #sistema operacional de ultima versão em vm
+
+    steps: #
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: "17"
+          distribution: "temurin"
+          cache: maven
+      - name: Build with Maven
+        run: mvn clean install
