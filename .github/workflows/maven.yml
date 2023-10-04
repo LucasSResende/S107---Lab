@@ -27,7 +27,9 @@ jobs: #cada etapa do workflow
           distribution: "temurin"
           cache: maven
       - name: Test with Maven
-        run: mvn clean test site
+        run: |
+          cd Aula-GitHub-Actions
+          mvn clean test site
 
   build: #1a etapa
     runs-on: ubuntu-latest #sistema operacional de ultima versão em vm
@@ -44,7 +46,7 @@ jobs: #cada etapa do workflow
       - name: Build with Maven
         run: |
           cd Aula-GitHub-Actions
-          mvn clean install
+          mvn clean install     
 
 #  build: #1a etapa
 #    runs-on: ubuntu-latest #sistema operacional de ultima versão em vm
